@@ -1,0 +1,18 @@
+cloud:
+    aws:
+      credentials:
+          access-key: access_key
+          secret-key: secret_key
+      region:
+          static: aws_region_name
+      stack:
+          auto: false
+   
+
+application:
+       bucket:
+           name: social_connect_storage_name
+       
+        
+server:
+     port: 5000       
