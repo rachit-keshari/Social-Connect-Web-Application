@@ -1,0 +1,62 @@
+agm-map{
+  height:400px;
+  width: 100%;
+}
+
+.chart-sty{
+  background-color: rgb(250, 250, 250);
+  border-radius: 10px;
+  box-shadow: 0 0.2rem 0.2rem 0 rgb(148, 148, 148);
+  border:1px solid rgb(194, 193, 193);
+  width: 400px;
+  height: 350px;
+  margin: 10px;
+}
+
+.btn-sty{
+  width:80px;
+  height:35px;
+  margin-right:6px;
+  margin-top: 4px;
+}
+
+.btn-sty:hover{
+  transform: translateY(-3px);
+    box-shadow: 6px 6px 5px rgba(120, 122, 122, 0.5);
+}
+
+.mycss-1 {
+  border:1px solid rgb(194, 193, 193);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  margin-top: 10px;
+  margin-left: 20px;
+  width:250px;
+  background-color: white;
+  box-shadow: 0 0.2rem 0.2rem 0 rgb(148, 148, 148);
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.form-select{
+  text-align: left;
+  padding: 1px;
+  font-weight: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: grey;
+  width: 800px;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 10px;
+  height: 40px;
+  box-shadow: 0 0.2rem 0.2rem 0 rgb(148, 148, 148);
+}

@@ -1,0 +1,25 @@
+<div class="container text-center">
+<h1 class="text-center">Photo Gallery</h1>
+</div>
+
+<div class="container row" [ngStyle]="galleryViewDy">
+
+  <!-- col-1 -->
+    <div class="col-xs-4" *ngFor="let p of postsset | reverse">
+      <div class="zoom-container m-0 p-0">
+        <img class="photo-scale zoom-ease" [ngStyle]="photoScaleDy"
+         (click)="openImageCarsoleDialog(p.image)" [src]="p.image | authImage | async">
+        </div>
+     </div>
+</div>
+
+<div style="width: 100%; height:600px;"></div>
+
+<ng-template #imageCarsoleDialog>
+    <div class="image-display" [ngStyle]="imgDispDy">
+    <img [src]="dialogImage | authImage | async" [ngStyle]="imgDispDy" width="860px" height="465px">
+    </div>
+  <mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+</ng-template>

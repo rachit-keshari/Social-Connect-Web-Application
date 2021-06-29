@@ -1,0 +1,55 @@
+
+<div class="container p-0" [ngStyle]="findLocTextDy">
+  <h1>Covid-19 Info</h1>
+</div>
+<mat-divider class="my-1 mx-4"></mat-divider>
+<div class="container p-0" [ngStyle]="findLocTextDy">
+  <h3>Country Search</h3>
+    <select class="form-select" [ngStyle]="selectSizeDy" [(ngModel)]="selectedOption">
+      <option  *ngFor="let op of covidInfo.Countries">
+        {{op.Country}}
+      </option>
+    </select>
+    &nbsp;&nbsp;
+    <button class="btn btn-primary btn-sty my-2" (click)="selectOptionClick()">Search</button>
+</div>
+<mat-divider class="my-3 mx-2"></mat-divider>
+<div class="container row p-0" [ngStyle]="locValDy">
+  <!-- col-1 -->
+   <div class="col-md-6 chart-sty text-left p-0" [ngStyle]="covValDy">
+    <div>
+      <div id="myChart1" style="display: block">
+        <canvas class="p-2" id="barChart" height="300" width="400" [ngStyle]="chartDy" ></canvas>
+      </div>
+    </div>
+  </div>
+   <!-- col-2 -->
+   <div class="col-md-5 chart-sty text-right px-0" [ngStyle]="covValDy">
+    <div  id="myChart2" style="display: block">
+      <canvas class="p-2" id="doughnutChart" height="300" width="400" [ngStyle]="chartDy"></canvas>
+    </div>
+  </div>
+</div>
+
+<mat-divider class="my-3 mx-2"></mat-divider>
+
+<div class="container row" [ngStyle]="findLocDy">
+  <div class="col-md-6" >
+    <ul class="list-group">
+      <li class="list-group-item font-weight-bold">{{country.Country}}</li>
+      <li class="list-group-item">NewConfirmed: {{country.NewConfirmed}}</li>
+      <li class="list-group-item">NewDeaths: {{country.NewDeaths}}</li>
+      <li class="list-group-item">NewRecovered: {{country.NewRecovered}}</li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <ul class="list-group">
+      <li class="list-group-item font-weight-bold">Date: {{country.Date.substring(0,10)}}</li>
+      <li class="list-group-item">TotalConfirmed: {{country.TotalConfirmed}}</li>
+      <li class="list-group-item">TotalDeaths: {{country.TotalDeaths}}</li>
+      <li class="list-group-item">TotalRecovered: {{country.TotalRecovered}}</li>
+    </ul>
+  </div>
+</div>
+
+<mat-divider class="mt-3 mb-5 mx-2"></mat-divider>

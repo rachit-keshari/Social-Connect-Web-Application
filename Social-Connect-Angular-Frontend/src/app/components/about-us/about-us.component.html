@@ -1,0 +1,21 @@
+<div class="container text-center" [ngStyle]="divDy">
+  <h1>About Me!</h1>
+</div>
+<div class="container row bg-dark" [ngStyle]="dispDy" style="width: 800px;">
+  <div class="p-3">
+    <h3 class="p-0 m-0 text-white" style="font-size:12; font-family: 'Poppins';">Hi {{loginService.getUser().firstname}}! I'm Rachit an ECE (Electronics and Communication Engineering) Undergraduate Student in 4th Year at NIT Kurukshetra, This is a Social Media Application Model with name Social-Connect where you can Add Friends, Post Images, Edit Post, Delete Post, Edit Profile, Set and Edit Bio & Cover image, there are other features also as  Photo Gallery Viewer, Friends Profile View ,Youtube video search/play ,Location Search & Info Provider, Covid-19 Info provider, Theme color & background change features. </h3>
+    <div class="row p-3">
+      <h3 class="text-white" style="font-size:12; font-family: 'Poppins';">Go to Help section for features details</h3>
+      <button type="button" mat-raised-button class="text-center btn-sty" (click)="openHelpCall()">
+        Help</button>
+    </div>
+  </div>
+  <div class="p-3">
+    <h3 class="p-0 m-0 text-white text-center" style="font-size:12; font-family: 'Poppins';">"This Application was entirely designed and developed by me from Scratch. Its front-end was developed in Angular 8 framework, with Bootstrap, Angular Material UI, & the back-end was developed using JAVA, Spring Boot (for dependency Injection and the creation and handling of Restful API and other services). The Application was made responsive for both Desktop & Mobile devices."</h3>
+    <h3 class="p-0 m-0 text-white"
+    style="margin-left:170px; font-size:12; font-family: 'Poppins';">-Rachit</h3>
+  </div>
+</div>
+
+<div style="width: 100%; height: 300px;"></div>
+

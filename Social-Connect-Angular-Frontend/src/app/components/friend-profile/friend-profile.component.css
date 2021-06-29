@@ -1,0 +1,147 @@
+.example-card {
+  max-width: 800px;
+}
+
+.icon-img{
+  max-width:45px;
+  max-height:45px;
+  border-radius: 50%;
+}
+
+.mycss {
+   /* border:1px solid rgb(194, 193, 193); */
+   border-radius: 5px;
+   padding: 5px;
+   width:610px;
+   /* box-shadow: 0 0.5rem 0.2rem 0 rgb(148, 148, 148); */
+}
+
+table{
+  width:100%;
+}
+
+.mycss-1 {
+  /* border:1px solid rgb(194, 193, 193); */
+  border-radius: 5px;
+  padding: 5px;
+  width:260px;
+  /* box-shadow: 0 0.2rem 0.2rem 0 rgb(148, 148, 148); */
+}
+
+.leftProfileCard{
+   align-items: center;
+}
+
+.leftProfileCard-img{
+   border-radius: 50%;
+   width:200px;
+   height:200px;
+   margin-bottom: 25px;
+   box-shadow: 0.3rem 0.3rem 0.2rem 0 rgb(199, 196, 196);
+}
+
+.work-space{
+  justify-content: center;
+  margin-bottom: 20px;
+}
+mat-menu{
+  margin-top: 20px;
+  z-index: 0;
+}
+
+
+.mycss-3 {
+  /* border:1px solid rgb(194, 193, 193); */
+  border-radius: 5px;
+  margin-left: 8px;
+  margin-bottom: 20px;
+  width:899px;
+  background-color:none;
+  /* box-shadow: 0 0.5rem 0.2rem 0 rgb(148, 148, 148); */
+}
+
+.example-card {
+  max-width: 900px;
+  box-shadow: 0.3rem 0.3rem 0.2rem 0 rgb(199, 196, 196);
+}
+
+.profile-shadow{
+  box-shadow: 0.3rem 0.3rem 0.2rem 0 rgb(199, 196, 196);
+}
+
+.cover-img{
+  object-fit: cover;
+  height: 350px;
+}
+
+.mainProfileCard-img{
+   object-fit: cover;
+   position: absolute;
+   top:250px;
+   left:40px;
+   width: 220px;
+   height: 220px;
+   border:10px solid white;
+   border-radius: 50%;
+}
+
+
+.mainProfile-text{
+   width: 520px;
+   justify-content: center;
+   margin-top: 20px;
+   margin-left: 310px;
+   font-size: 45px;
+   padding: 5px;
+   color: #1a2fa8;
+   font-family:  Georgia, 'Times New Roman', Times, serif;
+}
+
+.card-text{
+  margin-top: 25px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.btn-sty{
+  width:175px;
+  height:45px;
+  margin-right:8px;
+  margin-left:28px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+.btn-sty:hover{
+  transform: translateY(-3px);
+    box-shadow: 6px 6px 5px rgba(120, 122, 122, 0.5);
+}
+
+.profile-card{
+   background-color: white;
+   padding:2px;
+   margin: 2px;
+}
+
+.profile-friend{
+    background-color:white;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid rgb(224, 224, 224);
+    box-shadow: 0.3rem 0.3rem 0.2rem 0 rgb(199, 196, 196);
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.zoom-container{
+  overflow: hidden;
+}
+
+.zoom-ease{
+  transition: 0.5s ease;
+}
+.zoom-ease:hover{
+  transform: scale(1.2);
+}

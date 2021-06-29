@@ -1,0 +1,130 @@
+<div class="container text-center" [ngStyle]="divDy">
+  <h1>Help</h1>
+</div>
+<div class="container row bg-dark" [ngStyle]="dispDy" style="width: 800px;">
+  <div class="p-3">
+    <h4 class="p-0 m-0 text-white" style="font-size:18; font-family: 'Poppins';">Hi {{loginService.getUser().firstname}}! , In this
+      Social-Connect application you can navigate to following listed features. from nav menu, sidenave menu, or from
+      Drop Down menu, Kindly use Desktop View for better experience.</h4>
+    <div class="row p-3">
+
+      <div class="container row m-0 p-0 text-center">
+        <div class="col-md-8 p-2 text-left">
+          <h4 class="text-white" style="font-size:18; font-family: 'Poppins';">You can add friends from Add-Friend option on sidenav.</h4>
+        </div>
+        <div class="col-md-4 p-2 text-right">
+          <button type="button" mat-raised-button class="text-center btn-sty" (click)="openAddFriendCall()">
+            Add Friend</button>
+        </div>
+      </div>
+
+      <div class="container row m-0 p-0 text-center">
+        <div class="col-md-8 p-2 text-left">
+          <h4 class="text-white" style="font-size:18; font-family: 'Poppins';">You can View your friends & their Profile from Friends
+            option on sidenav.</h4>
+        </div>
+        <div class="col-md-4 p-2 text-right">
+          <button type="button" mat-raised-button class="text-center btn-sty" (click)="openFriendsCall()">
+            Friends</button>
+        </div>
+      </div>
+
+
+      <div class="container row m-0 p-0 text-center">
+        <div class="col-md-8 p-2 text-left">
+          <h4 class="text-white" style="font-size:18; font-family: 'Poppins';">You can View your posts, add posts, edit profile, from
+            My-Timeline option on sidenav.</h4>
+        </div>
+        <div class="col-md-4 p-2 text-right">
+          <button type="button" mat-raised-button class="text-center btn-sty" (click)="openMyTimelineCall()">
+            My Timeline</button>
+        </div>
+      </div>
+
+
+      <div class="container row m-0 p-0 text-center">
+        <div class="col-md-8 p-2 text-left">
+          <h4 class="text-white" style="font-size:18; font-family: 'Poppins';">You can View your Profile, your posts, add posts, from
+            My-Profile option on drop-down menu.</h4>
+        </div>
+        <div class="col-md-4 p-2 text-right">
+          <button type="button" mat-raised-button class="text-center btn-sty" (click)="openMyProfileCall()">
+            My-Profile</button>
+        </div>
+      </div>
+
+
+      <div class="container row m-0 p-0 text-center">
+        <div class="col-md-8 p-2 text-left">
+          <h4 class="text-white" style="font-size:18; font-family: 'Poppins';">You can Remove Friend from Remove-Friend option on
+            sidenav.</h4>
+        </div>
+        <div class="col-md-4 p-2 text-right">
+          <button type="button" mat-raised-button class="text-center btn-sty" (click)="openRemoveFriendCall()">
+            Remove Friend</button>
+        </div>
+      </div>
+
+      <div class="container row m-0 p-0 text-center">
+        <div class="col-md-8 p-2 text-left">
+          <h4 class="text-white" style="font-size:18; font-family: 'Poppins';">You can View Your post Images in gallery View from
+            Photo-Gallery option on sidenav.</h4>
+        </div>
+        <div class="col-md-4 p-2 text-right">
+          <button type="button" mat-raised-button class="text-center btn-sty" (click)="openPhotoGalleryCall()">
+            Photo Gallery</button>
+        </div>
+      </div>
+
+      <div class="container row m-0 p-0 text-center">
+        <div class="col-md-8 p-2 text-left">
+          <h4 class="text-white" style="font-size:18; font-family: 'Poppins';">You can search and play Youtube videos from
+            Search-Video option on sidenav.</h4>
+        </div>
+        <div class="col-md-4 p-2 text-right">
+          <button type="button" mat-raised-button class="text-center btn-sty" (click)="openSearchVideoCall()">
+            Search Video</button>
+
+        </div>
+      </div>
+
+
+      <div class="container row m-0 p-0 text-center">
+        <div class="col-md-8 p-2 text-left">
+          <h4 class="text-white" style="font-size:18; font-family: 'Poppins';">You can get the latest updated Covid
+            Informations with Tabular & Chart representation on Covid-Info option on sidenav.</h4>
+        </div>
+        <div class="col-md-4 p-2 text-right">
+          <button type="button" mat-raised-button class="text-center btn-sty" (click)="openCovidInfoCall()">
+            Covid Info</button>
+        </div>
+      </div>
+
+
+      <div class="container row m-0 p-0 text-center">
+        <div class="col-md-8 p-2 text-left">
+          <h4 class="text-white" style="font-size:18; font-family: 'Poppins';">You can Find Your location details, and can
+            search any location on google maps with satellite view from Find-Location option on sidenav.
+          </h4>
+        </div>
+        <div class="col-md-4 p-2 text-right">
+          <button type="button" mat-raised-button class="text-center btn-sty" (click)="openFindLocationCall()">
+            Find Location</button>
+        </div>
+      </div>
+
+      <div class="container row m-0 p-0 text-center">
+        <div class="col-md-8 p-2 text-left">
+          <h4 class="text-white" style="font-size:18; font-family: 'Poppins';">You can change background image and can
+            change Navmenu color Setting option from dropdown menu.</h4>
+        </div>
+        <div class="col-md-4 p-2 text-right">
+          <button type="button" mat-raised-button class="text-center btn-sty" (click)="openSettingCall()">
+            Settings</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="width: 100%; height: 300px;"></div>

@@ -1,0 +1,57 @@
+
+<div class="footer">
+<div class="row footer-sty" [ngStyle]="footerDy">
+    <div class="col-sm-4 mx-0 py-3 text-center" [ngStyle]="divDy">
+      <div class="row mt-4" *ngIf="loginService.isLoggedIn()">
+        <div class="col-md-6" [ngStyle]="textDy">
+          <h3 class="p-0 m-0" (click)="openAboutUsCall()">About Us</h3>
+          <h3 class="p-0 m-0" (click)="openContactUsCall()">Contact Us</h3>
+          <h3 class="p-0 m-0" (click)="openSettingCall()">Setting</h3>
+          <h3 class="p-0 m-0" (click)="openCovidInfoCall()">Covid Info</h3>
+          <h3 class="p-0 m-0" (click)="openFindLocationCall()">Find Location</h3>
+        </div>
+        <div class="col-md-6" [ngStyle]="textDy">
+          <h3 class="p-0 m-0" (click)="openMyProfileCall()">My Profile</h3>
+          <h3 class="p-0 m-0" (click)="openMyTimelineCall()">My Timeline</h3>
+          <h3 class="p-0 m-0" (click)="openPhotoGalleryCall()">Photo Gallery</h3>
+          <h3 class="p-0 m-0" (click)="openSearchVideoCall()">Play Video</h3>
+          <h3 class="p-0 m-0" (click)="openFriendsCall()">Friends</h3>
+        </div>
+      </div>
+
+      <div class="row mt-4" *ngIf="!loginService.isLoggedIn()">
+        <div [ngStyle]="textDy">
+          <h5 class="p-0 m-0 text-center">"This Application was entirely designed and developed by me from Scratch. Its front-end was developed in Angular 8 framework, with Bootstrap, Angular Material UI, & the back-end was developed using JAVA, Spring Boot (for dependency Injection and the creation and handling of Restful API and other services). The whole App is Deployed over AWS EB (Elastic Beanstalk), used RDS & AmazonS3 services of AWS for database & other storage purpose. The Application was made responsive for both Desktop & Mobile devices."</h5>
+          <h5 style="margin-left:195px;">-Rachit</h5>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-sm-4 mx-0 py-3 text-center" [ngStyle]="footerDy">
+       <img src="assets/image/p-2.jpg" alt="Profile Pic" class="icon-img">
+       <h3 class="p-0 m-0">Developer: Rachit Keshari</h3>
+       <h4 class="p-0 m-0">ECE Undergraduate Student</h4>
+       <h4 class="p-0 m-0">NIT Kurukshetra, Haryana</h4>
+       <h4 class="p-0 m-0">Pin: 136119</h4>
+    </div>
+    <div class="col-sm-4 mx-0 py-3 text-center" [ngStyle]="footerDy" >
+      <div class="container text-center">
+        <h3 class="m-0 p-0">Social link:</h3>
+        <div class="mx-5">
+      <a  href="mailto:rachit.keshari@gmail.com">
+        <img class="icon-img2" [ngStyle]="iconImg2"  src="assets/image/g.jpg"/></a>
+      <a  href="https://www.facebook.com/rachit.keshari">
+        <img class="icon-img2" [ngStyle]="iconImg2" src="assets/image/f.jpg"/></a>
+      <a  href="https://www.linkedin.com/in/rachit-keshari-980a50181/">
+        <img class="icon-img2" [ngStyle]="iconImg2" src="assets/image/l.jpg"/></a>
+      <a  href="https://www.youtube.com/channel/UC2HQ_HP79QqX8Hyg-yNjaSQ">
+        <img class="icon-img2" [ngStyle]="iconImg2" src="assets/image/y.jpg"/></a>
+        <a  href="https://github.com/rachit-keshari">
+          <img class="icon-img2" [ngStyle]="iconImg2" src="assets/image/git.jpg"/></a>
+      <a  href="https://www.instagram.com/rachit_keshari_">
+        <img class="icon-img2" [ngStyle]="iconImg2"  src="assets/image/i.jpg"/></a>
+    </div>
+    <hr>
+    <a href="mailto:rachit.keshari@gmail.com" style="color:white;"><h4>email: rachit.keshari@gmail.com</h4></a>
+</div>
+</div>

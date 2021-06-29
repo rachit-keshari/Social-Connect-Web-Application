@@ -1,0 +1,78 @@
+<div class="row">
+  <!-- col-1 -->
+  <div class="work-space col-md-8">
+    <div class="container mycss" [ngStyle]="mycssDy">
+      <div class="example-card" *ngFor="let f of friendsset">
+        <div mat-card-avatar class="mr-3">
+          <img class="icon-img" [src]="f.imagepro | authImage | async" />
+        </div>
+        <div>
+          <mat-card-title [ngStyle]="textShortDy">{{f.name}}</mat-card-title>
+          <mat-card-subtitle>friend id:{{f.uid}}</mat-card-subtitle>
+        </div>
+        <span class="example-spacer"></span>
+        <button type="button" mat-raised-button class="btn-sty" (click)="openProfileCall(f.uid)">
+          Open Profile</button>
+      </div>
+    </div>
+    <h1 class="addPostHeading text-center" [ngStyle]="addPostCommentDy">
+      Add New Friends!😇 &nbsp;
+      <button type="button" mat-raised-button class="text-center btn-sty" (click)="addFriendCall()">
+        Add Friend</button></h1>
+
+    <mat-divider class="my-2 mx-3 mr-5"></mat-divider>
+    <!-- col-2 -->
+  </div>
+  <div class="side-space col-md-4">
+
+    <div class="mycss-1" [ngStyle]="mycss1Dy">
+      <mat-card class="leftProfileCard">
+        <img class="leftProfileCard-img" [src]="loginService.getUser().imagepro | authImage | async" />
+        <mat-card-title>
+          {{loginService.getUser().firstname}}&nbsp;
+          {{loginService.getUser().lastname}}
+        </mat-card-title>
+        <mat-card-subtitle>{{loginService.getUser().firstname}}</mat-card-subtitle>
+        <mat-card-content>
+          <mat-card-title>Bio</mat-card-title>
+          <p>{{loginService.getUser().bio}}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <mat-divider class="my-3 mx-3 mr-5"></mat-divider>
+    <div class="mycss-1" [ngStyle]="mycss1Dy">
+      <mat-card class="leftProfileCard">
+        <mat-card-content>
+          <mat-card-title>User Details</mat-card-title>
+          <div class="my-2"></div>
+          <mat-card-content>Email: {{loginService.getUser().email}}
+          </mat-card-content>
+          <mat-card-content>Phone: {{loginService.getUser().phone}}
+          </mat-card-content>
+          <mat-card-content>Name: {{loginService.getUser().firstname}}
+          </mat-card-content>
+          <mat-card-content>Friends: {{friendsCount}}
+          </mat-card-content>
+          <mat-card-content>Posts: {{postsCount}}
+          </mat-card-content>
+          <mat-card-content>Popularity:
+          </mat-card-content>
+          <div class="container">
+            <mat-progress-bar mode="determinate" color="accent" [value]="postsCount"></mat-progress-bar>
+          </div>
+          <div class="my-2"></div>
+          <mat-card-content>Rating:
+          </mat-card-content>
+          <div class="container">
+            <mat-progress-bar mode="determinate" color="primary" value="5"></mat-progress-bar>
+          </div>
+          <div class="my-2"></div>
+        </mat-card-content>
+
+      </mat-card>
+    </div>
+
+  </div>
+</div>
+
+<div style="width: 100%; height:200px;"></div>

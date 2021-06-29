@@ -1,0 +1,192 @@
+
+  <div class="container mycss-3 px-0 my-2" [ngStyle]="mycss3Dy">
+
+    <mat-card class="example-card">
+      <img mat-card-image [src]="loginService.getUser().imagecov | authImage | async"
+        class="cover-img">
+      <img class="mainProfileCard-img" [src]="loginService.getUser().imagepro | authImage | async" />
+      <div class="mainProfile-text text-center" [ngStyle]="mainTextDy" >
+        {{loginService.getUser().firstname}}
+        &nbsp;{{loginService.getUser().lastname}}
+        <div class="card-text text-center row">
+          <div>Email: {{loginService.getUser().email}}</div>&nbsp;|&nbsp;
+          <div>Phone no: {{loginService.getUser().phone}}</div>&nbsp;|&nbsp;
+          <div>Username: {{loginService.getUser().firstname}}</div>
+        </div>
+      </div>
+    </mat-card>
+
+  </div>
+
+
+<!-- user details -->
+
+<div class="row mt-2">
+
+  <!-- col-1 -->
+  <div class="side-space col-md-4 px-0">
+
+    <div class="mycss-1 px-0" [ngStyle]="mycss1Dy">
+         <mat-card class="profile-shadow">
+             <mat-card-header>
+                 <mat-card-title>Bio:</mat-card-title>
+                 <mat-card-subtitle>{{loginService.getUser().firstname}}</mat-card-subtitle>
+             </mat-card-header>
+             <mat-card-content>
+                 {{loginService.getUser().bio}}
+             </mat-card-content>
+         </mat-card>
+    </div>
+    <mat-divider class="px-0 ml-5 mr-4 my-2"></mat-divider>
+    <div class="mycss-1 px-0" [ngStyle]="mycss1Dy">
+        <div class="profile-friend">
+          <div class="p-2">
+            <h1 class="my-0">Friends List:</h1>
+            <h3 class="mb-1" style="color: rgb(156, 155, 155);">open profile:</h3>
+          </div>
+          <div class="profile-card row text-center" *ngFor="let f of friendsset">
+            <div class="col-xs-3 px-1 mr-2">
+              <img class="icon-img"
+              [src]="f.imagepro | authImage | async"/>
+            </div>
+            <div class="col-xs-9">
+            <button type="button" mat-raised-button class="btn-sty"
+               (click)="OpenProfileCall(f.uid)">
+              {{f.name}}</button>
+            </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- col-2 -->
+
+  <div class="work-space col-md-8 mx-0 px-0">
+    <div class="mycss" [ngStyle]="mycssDy">
+      <mat-card class="profile-shadow">
+        <div class="row px-2 py-0">
+          <h2 class="addPostHeading">
+            Want to add new Post! Here you go </h2>
+          <span class="example-spacer"></span>
+          <button mat-raised-button class="btn-sty"
+          (click)="openAddPostDialog()">Add New Post</button>
+        </div>
+      </mat-card>
+    </div>
+    <mat-divider class="px-0 ml-5 mr-4 my-2"></mat-divider>
+    <div class="container mycss" [ngStyle]="mycssDy" *ngFor="let p of postsset | reverse">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar>
+            <img class="icon-img" [src]="loginService.getUser().imagepro | authImage | async" />
+          </div>
+          <mat-card-title>{{loginService.getUser().firstname}}&nbsp;
+            {{loginService.getUser().lastname}}</mat-card-title>
+          <mat-card-subtitle>{{p.title}}</mat-card-subtitle>
+
+          <span class="example-spacer"></span>
+          <button mat-icon-button [matMenuTriggerFor]="beforeMenu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #beforeMenu="matMenu" xPosition="before">
+            <button mat-menu-item (click)="deletePostCall(p.post_id)">
+              <mat-icon>delete</mat-icon>
+              <span>Delete Post</span>
+            </button>
+            <button mat-menu-item (click)="openEditPostDialog(p.title,p.msg,p.image,p.post_id,p.likes,p.share,p.dislike,p.fav)">
+              <mat-icon>edit</mat-icon>
+              <span>Edit Post</span>
+            </button>
+          </mat-menu>
+
+        </mat-card-header>
+        <div class="zoom-container m-0 p-0">
+        <img mat-card-image class="zoom-ease" [src]="p.image | authImage | async">
+        </div>
+        <mat-card-content>
+          <p>{{p.msg}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button [matBadge]="p.likes" matBadgeColor="primary" class="like-btn" [ngStyle]="likeBtnDy" style="margin-right: 10px; margin-bottom: 10px;"
+          matTooltip="Like" matTooltipPosition="left"
+          (click)="likePostCall(p.title,p.msg,p.image,p.post_id,p.likes,p.dislike,p.share,p.fav)">
+            <mat-icon>thumb_up</mat-icon>
+          </button>
+          <button mat-raised-button [matBadge]="p.dislike" matBadgeColor="accent" class="like-btn" [ngStyle]="likeBtnDy" style="margin-bottom: 10px;"
+          matTooltip="Dislike" matTooltipPosition="below"
+          (click)="dislikePostCall(p.title,p.msg,p.image,p.post_id,p.likes,p.dislike,p.share,p.fav)">
+            <mat-icon>thumb_down</mat-icon>
+          </button>
+          <button mat-raised-button [matBadge]="p.share" matBadgeColor="warn" class="like-btn" [ngStyle]="likeBtnDy" style="margin-bottom: 10px; margin-right: 280px;"
+          matTooltip="Share" matTooltipPosition="right"
+          (click)="sharePostCall(p.title,p.msg,p.image,p.post_id,p.likes,p.dislike,p.share,p.fav)">
+            <mat-icon>share</mat-icon>
+          </button>
+          <button *ngIf="p.fav" mat-raised-button class="like-btn" [ngStyle]="favBtnDy"
+            style="margin-bottom: 10px;" matTooltip="Favourite" matTooltipPosition="left"
+          (click)="favPostCall(p.title,p.msg,p.image,p.post_id,p.likes,p.dislike,p.share,p.fav)">
+            <mat-icon>favorite</mat-icon>
+          </button>
+          <button *ngIf="!p.fav" mat-raised-button class="like-btn" [ngStyle]="favBtnDy"
+          style="margin-bottom: 10px;" matTooltip="Favourite" matTooltipPosition="left"
+          (click)="favPostCall(p.title,p.msg,p.image,p.post_id,p.likes,p.dislike,p.share,p.fav)">
+            <mat-icon>favorite_border</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+      <mat-divider class="px-0 ml-5 mr-4 my-2"></mat-divider>
+    </div>
+  </div>
+
+  <div style="width: 100%; height: 200px;"></div>
+
+
+
+<ng-template #addPostDialog>
+  <form (ngSubmit)="addPostDilogFormSubmit()" class="p-3">
+  <h2 matDialogTitle>Add New Post</h2>
+  <div class="mb-3 p-2">
+    <label class="form-label">Add Title of Post</label>
+    <input class="form-control" type="text" id="title" placeholder="Enter post title"
+     [(ngModel)]="addPost.title"  [ngModelOptions]="{standalone: true}">
+  </div>
+  <div class="mb-3 p-2">
+      <label for="exampleFormControlTextarea1" class="form-label">Add Post Message</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter post message" [(ngModel)]="addPost.msg" [ngModelOptions]="{standalone: true}" ></textarea>
+    </div>
+  <div class="mb-3 p-2">
+      <label for="formFile" class="form-label">Add Post Image File</label>
+      <input class="form-control" type="file" id="proFile"
+      (change)="onPostImageChange($event)">
+  </div>
+  <mat-dialog-actions align="end">
+    <button class="mx-2" type="submit" mat-raised-button color="primary">Post</button>
+    <button class="mx-2" type="reset" mat-raised-button color="primary">Reset</button>
+    <button class="mx-2" mat-raised-button matDialogClose="no">Cancel</button>
+  </mat-dialog-actions>
+</form>
+</ng-template>
+
+<ng-template #editPostDialog>
+  <form (ngSubmit)="editPostDilogFormSubmit()" class="p-3">
+  <h2 matDialogTitle>Edit your Post</h2>
+  <div class="mb-3 p-2">
+    <label class="form-label">Edit Title of Post</label>
+    <input class="form-control" type="text" id="title" placeholder="Enter post title"
+     [(ngModel)]="addPost.title"  [ngModelOptions]="{standalone: true}">
+  </div>
+  <div class="mb-3 p-2">
+      <label for="exampleFormControlTextarea1" class="form-label">Edit Post Message</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter post message" [(ngModel)]="addPost.msg" [ngModelOptions]="{standalone: true}" ></textarea>
+    </div>
+  <div class="mb-3 p-2">
+      <label for="formFile" class="form-label">Change Post Image, if not want to change don't choose any file.</label>
+      <input class="form-control" type="file" id="proFile"
+      (change)="onPostImageChange($event)">
+  </div>
+  <mat-dialog-actions align="end">
+    <button class="mx-2" type="submit" mat-raised-button color="primary">Confirm Edit</button>
+    <button class="mx-2" type="reset" mat-raised-button color="primary">Reset</button>
+    <button class="mx-2" mat-raised-button matDialogClose="no">Cancel</button>
+  </mat-dialog-actions>
+</form>
+</ng-template>

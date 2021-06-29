@@ -1,0 +1,75 @@
+<div class="mycss">
+
+  <mat-drawer-container class="example-container">
+    <mat-drawer #drawer [(mode)]="modeVal"   [(opened)]="sideNav">
+
+      <div class="list-group mx-1 my-1 stickSideNav">
+        <mat-list role="list">
+          <mat-list-item role="listitem">
+            <button mat-stroked-button class="my-btn px-3"
+            (click)="switchToamo1()">
+              <mat-icon>delete_sweep</mat-icon>&nbsp;&nbsp;&nbsp; Delete User</button>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <button mat-stroked-button class="my-btn px-3"
+            (click)="switchToamo2()">
+              <mat-icon>info</mat-icon>&nbsp;&nbsp;&nbsp; Get Users</button>
+          </mat-list-item>
+          <mat-divider class="my-3 mx-3"></mat-divider>
+          <mat-list-item role="listitem">
+            <button mat-stroked-button class="my-btn px-3"
+            (click)="switchToamo3()">
+              <mat-icon>info</mat-icon>&nbsp;&nbsp;&nbsp; Covid Info</button>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <button mat-stroked-button class="my-btn px-3"
+            (click)="switchToamo4()">
+            <mat-icon>place</mat-icon>&nbsp;&nbsp;&nbsp; Find Location</button>
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </mat-drawer>
+       <mat-drawer-content [ngStyle]="{ 'background-image':'url(../../../../assets/image/'+bgVal+'.jpg)',
+       'background-size': 'cover', 'color':(bgVal)?'white':'black' }">
+
+        <div [ngSwitch]="drawerContent">
+        <app-delete-user
+        *ngSwitchCase="'amo-1'"></app-delete-user>
+        <app-get-users
+        *ngSwitchCase="'amo-2'"></app-get-users>
+        <app-covid-info *ngSwitchCase="'amo-3'"></app-covid-info>
+        <app-find-location *ngSwitchCase="'amo-4'"></app-find-location>
+        <app-get-users
+        *ngSwitchDefault></app-get-users>
+      </div>
+
+
+
+      <!-- <div class="container mx-2 p-2">
+        <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+      </div>
+
+      <div class="container mx-3 p-2">
+        <div class="jumbotron">
+          <h1>Hello, world!</h1>
+          <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+          <hr class="my-4">
+          <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        </div>
+      </div> -->
+
+      <div class="scroll-to-top" [ngClass]="{'show-scrollTop': windowScrolled}">
+      <button mat-fab class="btn active" data-toggle="button"  (click)="scrollToTop()">
+        <mat-icon>eject</mat-icon>
+        </button>
+        </div>
+        <div >
+      <button mat-fab  class="refresh" (click)="Refresh()">
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </div>
+
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+</div>

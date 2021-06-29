@@ -1,0 +1,80 @@
+.mycss{
+  z-index: 0;
+}
+
+.example-container {
+  width: 100%;
+  height: 100%;
+  min-height: 660px;
+  margin: 0px;
+  border: 1px solid #555;
+}
+
+mat-drawer-content {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-drawer{
+  width:260px;
+}
+
+.my-btn{
+  width:215px;
+  text-align: left;
+}
+
+.work-space{
+  justify-content: center;
+}
+
+.stickSideNav{
+  position: fixed;
+}
+
+.bg-0{
+  background-size: cover;
+}
+
+.bg-1{
+  background-image: url("../../../../assets/image/bg-1.jpg");
+  background-size: cover;
+}
+
+.bg-2{
+  background-image: url("../../../../assets/image/bg-2.jpg");
+  background-size: cover;
+}
+
+.bg-3{
+  background-image: url("../../../../assets/image/bg-3.jpg");
+  background-size: cover;
+}
+
+.bg-4{
+  background-image: url("../../../../assets/image/bg-4.jpg");
+  background-size: cover;
+}
+
+.bg-5{
+  background-image: url("../../../../assets/image/bg-5.jpg");
+  background-size: cover;
+}
+
+.scroll-to-top {
+    position: fixed;
+    z-index: 51;
+    bottom:20px;
+    right:30px;
+    transition: all .2s ease-in-out;
+   }
+
+   .refresh{
+    position: fixed;
+    z-index: 51;
+    bottom:100px;
+    right:30px;
+ }

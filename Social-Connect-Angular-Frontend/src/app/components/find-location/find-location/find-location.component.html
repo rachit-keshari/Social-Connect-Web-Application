@@ -1,0 +1,61 @@
+<div class="container px-4" [ngStyle]="findLocDy">
+  <h1>Find Location</h1>
+</div>
+<mat-divider class="my-1 mx-4"></mat-divider>
+
+<div class="container row" [ngStyle]="LocValDy">
+  <div class="col-md-6 col-xs-6">
+    <ul class="list-group">
+      <li class="list-group-item">Your City: {{ipapiData.city}}</li>
+      <li class="list-group-item">Your State: {{ipapiData.region}}</li>
+      <li class="list-group-item">Your Country:{{ipapiData.country_name}}</li>
+      <li class="list-group-item">Pin Code:{{ipapiData.postal}}</li>
+    </ul>
+  </div>
+  <div class="col-md-6 col-xs-6">
+    <ul class="list-group">
+      <li class="list-group-item">Your IP:{{ipapiData.ip}}</li>
+      <li class="list-group-item">Your ISP:{{ipapiData.org}}</li>
+      <li class="list-group-item">Longitude: {{ipapiData.longitude}}</li>
+      <li class="list-group-item">Latitude: {{ipapiData.latitude}}</li>
+    </ul>
+  </div>
+</div>
+
+<mat-divider class="my-1 mx-4"></mat-divider>
+<div class="container  px-4" [ngStyle]="findLocDy">
+  <h2>Place Search</h2>
+  <div class="row mx-2">
+    <div class="col-md-4 text-left">
+      <div class="form-group mx-xs-4 mb-2">
+        <div class="mx-xs-4 mb-2">
+          <label>Address:</label>
+          <input type="text" class="form-control" [(ngModel)]="searchData.street">
+        </div>
+        <div class="mx-xs-4 mb-2">
+          <label>City:</label>
+          <input type="text" class="form-control" [(ngModel)]="searchData.city">
+        </div>
+        <div class="mx-xs-4 mb-2">
+          <label>Country:</label>
+          <input type="text" class="form-control" [(ngModel)]="searchData.location">
+        </div>
+        <div class="mx-xs-4 mb-2">
+          <label>Width:</label>
+          <input type="range" class="form-control-range px-2" [(ngModel)]="searchData.width">
+        </div>
+        <div class="mx-xs-4 mb-2">
+          <label>Height:</label>
+          <input type="range" class="form-control-range px-2" [(ngModel)]="searchData.height">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8 col-xs-8 text-right">
+      <iframe [width]="searchData.width*5.6" [height]="searchData.height*4" frameborder="0" scrolling="no"
+        marginheight="0" marginwidth="0" id="gmap_canvas"
+        [src]="getUrl('https://maps.google.com/maps?width='+(searchData.width*5.6)+'&amp;height='+(searchData.height*4)+'&amp;hl=en&amp;q='+searchData.street+searchData.city+'('+searchData.location+')&amp;t=&amp;z='+searchData.zoom+'&amp;ie=UTF8&amp;iwloc=B&amp;output=embed')"></iframe>
+    </div>
+  </div>
+</div>
+  <mat-divider class="my-3 mx-2"></mat-divider>

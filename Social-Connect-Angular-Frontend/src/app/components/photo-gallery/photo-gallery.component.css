@@ -1,0 +1,85 @@
+.example-card {
+  max-width: 800px;
+}
+
+.icon-img{
+  max-width:45px;
+  max-height:45px;
+  border-radius: 50%;
+}
+
+.mycss {
+   border:1px solid rgb(194, 193, 193);
+   border-radius: 5px;
+   padding: 10px;
+   margin: 10px;
+   width:660px;
+   background-color: white;
+   box-shadow: 0 0.5rem 0.2rem 0 rgb(148, 148, 148);
+}
+
+table{
+  width:100%;
+}
+
+.mycss-1 {
+  border:1px solid rgb(194, 193, 193);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  margin-top: 10px;
+  margin-left: 20px;
+  width:250px;
+  background-color: white;
+  box-shadow: 0 0.2rem 0.2rem 0 rgb(148, 148, 148);
+}
+.side-space{
+  justify-content: center;
+}
+
+.leftProfileCard{
+   align-items: center;
+}
+
+.leftProfileCard-img{
+   border-radius: 50%;
+   width:200px;
+   height:200px;
+   margin-bottom: 25px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-menu{
+  margin-top: 20px;
+  z-index: 0;
+}
+
+.zoom-container{
+  overflow: hidden;
+}
+
+.zoom-ease{
+  transition: 0.5s ease;
+}
+.zoom-ease:hover{
+  transform: scale(1.2);
+}
+
+.photo-scale{
+  object-fit: cover;
+  width:340px;
+  height: 250px;
+  margin:10px;
+}
+
+.image-display
+{
+  width:860px;
+  padding: 0;
+  height:fit-content;
+}
+
+

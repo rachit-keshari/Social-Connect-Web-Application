@@ -1,0 +1,68 @@
+.navbar{
+  box-shadow: 0 .3rem .3rem 0 rgb(66, 66, 66);
+}
+
+mat-menu{
+  margin-top: 20px;
+  z-index: 0;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.stickyBar {
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+  width:100%;
+}
+
+
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+textarea{
+  border: 1px solid grey;
+  min-width: fit-content;
+  min-height: 100px;
+}
+
+.icon-space{
+  width: 100px;
+}
+
+
+
+mat-toolbar{
+  width: 100%;
+  padding:10px;
+  height: fit-content;
+}
+
+.menu-items{
+   @media (max-width:490px) {
+        display:none;
+   }
+}
+
+.example-icon{
+  border:1px solid white;
+  border-radius: 10%;
+  margin-right: 13px;
+}
+
+.immature{
+  background-color: darkgreen;
+  color: white;
+}
+
+.black{
+  background-color: Black;
+  color: white;
+}
+

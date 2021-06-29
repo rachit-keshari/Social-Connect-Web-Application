@@ -1,0 +1,35 @@
+<p></p>
+<div class="container px-4" [ngStyle]="galleryViewDy">
+  <h1>Youtube Video Search</h1>
+  <div class="row">
+    <div class="col-md-9 text-right"><input type="text" class="form-control p-2" placeholder="Search" [(ngModel)]="search">
+    </div>
+    &nbsp;&nbsp;
+    <div class="col-md-2 text-left">
+      <button class="btn btn-danger btn-sty ml-1" (click)="onVideoSearch()">Search</button>
+    </div>
+  </div>
+</div>
+<mat-divider class="my-2 mx-4"></mat-divider>
+<div class="container row" [ngStyle]="galleryViewDy">
+  <!-- col-1 -->
+  <div class="col-xs-4" *ngFor="let v of youtubeSearch.items">
+    <div class="zoom-container m-0 p-0" [ngStyle]="photoScaleDy">
+      <img class="photo-scale zoom-ease"  (click)="openVideoDialog(v.id.videoId)"
+        [src]="v.snippet.thumbnails.medium.url">
+    </div>
+  </div>
+  <div style="width: 100%; height:200px;"></div>
+
+  <ng-template #imageCarsoleDialog>
+    <mat-dialog-content>
+      <div class="image-display" [ngStyle]="imgDispDy">
+        <iframe [ngStyle]="imgDispDy"
+         width="950" height="465" [src]="getUrl(dialogVideoLink)" frameborder="0"
+          allowfullscreen></iframe>
+      </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-raised-button mat-dialog-close>Close</button>
+    </mat-dialog-actions>
+  </ng-template>

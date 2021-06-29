@@ -1,0 +1,18 @@
+cloud:
+    aws:
+      credentials:
+          access-key: XYZ-XYZ-XYZ
+          secret-key: XYZ-XYZ-XYZ
+      region:
+          static: XYZ
+      stack:
+          auto: false
+   
+
+application:
+       bucket:
+           name: Your Storage Name 
+       
+        
+server:
+     port: 5000       

@@ -1,0 +1,109 @@
+
+  <div class="work-space col-md-12 px-0" style="margin-right: 30px;">
+    <div class="container mycss-3 px-0 my-2" [ngStyle]="mycss3Dy">
+
+      <mat-card class="example-card">
+        <img mat-card-image [src]="user.imagecov | authImage | async" class="cover-img">
+        <img class="mainProfileCard-img" [src]="user.imagepro | authImage | async" />
+        <div class="mainProfile-text text-center" [ngStyle]="mainTextDy">
+          {{user.firstname}}
+          &nbsp;{{user.lastname}}
+          <div class="card-text text-center row">
+            <div>Email: {{user.email}}</div>&nbsp;|&nbsp;
+            <div>Phone no: {{user.phone}}</div>&nbsp;|&nbsp;
+            <div>Username: {{user.firstname}}</div>
+          </div>
+        </div>
+      </mat-card>
+
+    </div>
+  </div>
+
+  <!-- user details -->
+
+  <div class="row" [ngStyle]="col2Dy">
+    <!-- col-1 -->
+    <div class="col-md-4 px-0">
+      <div class="mycss-1 px-0" [ngStyle]="mycss1Dy">
+        <mat-card class="profile-shadow">
+          <mat-card-header>
+            <mat-card-title>Bio:</mat-card-title>
+            <mat-card-subtitle>{{user.firstname}}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            {{user.bio}}
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <mat-divider class="px-0 ml-4 mr-4"></mat-divider>
+      <div class="mycss-1 px-0" [ngStyle]="mycss1Dy">
+        <div class="profile-friend">
+          <div class="p-2">
+            <h1 class="my-0">Friends List:</h1>
+            <h3 class="mb-1" style="color: rgb(156, 155, 155);">open profile:</h3>
+          </div>
+          <div class="profile-card row">
+            <div *ngFor="let f of user.friends">
+              <div class="p-0 m-1">
+                <img class="icon-img" [src]="f.imagepro | authImage | async" />
+              </div>
+            </div>
+          </div>
+          <div class="profile-card">
+            <button mat-raised-button class="btn-sty" [ngStyle]="btnDy" (click)="openAddFriends()">
+              Add Friends </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- col-2 -->
+
+    <div class="work-space col-md-8 mx-0 px-0">
+      <div class="container mycss px-0" [ngStyle]="mycssDy"
+      *ngFor="let p of user.posts | reverse">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar>
+              <img class="icon-img" [src]="user.imagepro | authImage | async" />
+            </div>
+            <mat-card-title>{{user.firstname}}&nbsp;
+              {{user.lastname}}</mat-card-title>
+            <mat-card-subtitle>{{p.title}}</mat-card-subtitle>
+
+            <span class="example-spacer"></span>
+            <div *ngIf="p.fav">
+              <mat-icon>favorite</mat-icon>
+            </div>
+            <div *ngIf="!p.fav">
+              <mat-icon>favorite_border</mat-icon>
+          </div>
+          </mat-card-header>
+          <div class="zoom-container m-0 p-0">
+            <img mat-card-image class="zoom-ease" [src]="p.image | authImage | async">
+          </div>
+          <mat-card-content>
+            <p>{{p.msg}}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button [matBadge]="p.likes" matBadgeColor="primary" class="like-btn" [ngStyle]="likeBtnDy"
+              style="margin-right: 10px; margin-bottom: 10px;" matTooltip="Like" matTooltipPosition="left"
+              (click)="likePostCall(p.title,p.msg,p.image,p.post_id,p.likes,p.dislike,p.share,p.fav)">
+              <mat-icon>thumb_up</mat-icon>
+            </button>
+            <button mat-raised-button [matBadge]="p.dislike" matBadgeColor="accent" class="like-btn" [ngStyle]="likeBtnDy"
+              style="margin-bottom: 10px;" matTooltip="Dislike" matTooltipPosition="below"
+              (click)="dislikePostCall(p.title,p.msg,p.image,p.post_id,p.likes,p.dislike,p.share,p.fav)">
+              <mat-icon>thumb_down</mat-icon>
+            </button>
+            <button mat-raised-button [matBadge]="p.share" matBadgeColor="warn" class="like-btn" [ngStyle]="likeBtnDy"
+              style="margin-bottom: 10px; margin-right: 326px;" matTooltip="Share" matTooltipPosition="right"
+              (click)="sharePostCall(p.title,p.msg,p.image,p.post_id,p.likes,p.dislike,p.share,p.fav)">
+              <mat-icon>share</mat-icon>
+            </button>
+          </mat-card-actions>
+        </mat-card>
+        <mat-divider class="my-2"></mat-divider>
+      </div>
+    </div>
+  </div>
+

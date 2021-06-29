@@ -1,0 +1,122 @@
+<div class="mycss">
+
+  <mat-drawer-container class="example-container">
+    <mat-drawer #drawer [(mode)]="modeVal"   [(opened)]="sideNav">
+
+      <div class="list-group mx-1 my-1 stickSideNav">
+        <mat-list role="list">
+          <mat-list-item role="listitem">
+            <button mat-stroked-button class="my-btn px-3"
+            (click)="switchToMo4()">
+              <mat-icon>person_add</mat-icon>&nbsp;&nbsp;&nbsp; Add Friend</button>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <button mat-stroked-button class="my-btn px-3"
+              (click)="switchToMo1()">
+              <mat-icon>supervised_user_circle</mat-icon>&nbsp;&nbsp;&nbsp; Friends</button>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <button mat-stroked-button class="my-btn px-3"
+            (click)="switchToMo2()">
+              <mat-icon>query_builder</mat-icon>&nbsp;&nbsp;&nbsp; My Timeline</button>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <button mat-stroked-button class="my-btn px-3"
+            (click)="switchToMo3()">
+              <mat-icon>photo_library</mat-icon>&nbsp;&nbsp;&nbsp; Photo Gallery</button>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <button mat-stroked-button class="my-btn px-3"
+            (click)="switchToNmo2()">
+            <mat-icon>ondemand_video</mat-icon>&nbsp;&nbsp;&nbsp;Search Videos</button>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <button mat-stroked-button class="my-btn px-3"
+            (click)="switchToMo5()">
+              <mat-icon>delete_sweep</mat-icon>&nbsp;&nbsp;&nbsp; Remove Friend</button>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <button mat-stroked-button class="my-btn px-3"
+            (click)="switchToMo6()">
+              <mat-icon>info</mat-icon>&nbsp;&nbsp;&nbsp; Help</button>
+          </mat-list-item>
+          <mat-divider class="my-3 mx-3"></mat-divider>
+          <mat-list-item role="listitem">
+            <button mat-stroked-button class="my-btn px-3"
+            (click)="switchToMo7()">
+              <mat-icon>info</mat-icon>&nbsp;&nbsp;&nbsp; Covid Info</button>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <button mat-stroked-button class="my-btn px-3"
+            (click)="switchToMo8()">
+            <mat-icon>place</mat-icon>&nbsp;&nbsp;&nbsp; Find Location</button>
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </mat-drawer>
+       <mat-drawer-content [ngStyle]="{ 'background-image':'url(../../../../assets/image/'+bgVal+'.jpg)',
+       'background-size': 'cover', 'color':(bgVal)?'white':'black' }">
+
+        <div [ngSwitch]="drawerContent">
+        <app-friends
+        *ngSwitchCase="'mo-1'"></app-friends>
+        <app-my-timeline
+        *ngSwitchCase="'mo-2'"></app-my-timeline>
+        <app-photo-gallery
+        *ngSwitchCase="'mo-3'"></app-photo-gallery>
+        <app-add-friend
+        *ngSwitchCase="'mo-4'"></app-add-friend>
+        <app-remove-friend
+        *ngSwitchCase="'mo-5'"></app-remove-friend>
+        <app-help
+        *ngSwitchCase="'mo-6'"></app-help>
+        <app-my-profile
+        *ngSwitchCase="'nmo-1'"></app-my-profile>
+        <app-trending-videos
+        *ngSwitchCase="'nmo-2'"></app-trending-videos>
+        <app-settings
+        *ngSwitchCase="'nmo-3'" ></app-settings>
+        <app-about-us
+        *ngSwitchCase="'nmo-4'"></app-about-us>
+        <app-contact-us
+        *ngSwitchCase="'nmo-5'" ></app-contact-us>
+        <app-friend-profile
+        [userid]="uid" *ngSwitchCase="'pmo-1'"></app-friend-profile>
+        <app-covid-info
+        *ngSwitchCase="'mo-7'"></app-covid-info>
+        <app-find-location
+        *ngSwitchCase="'mo-8'"></app-find-location>
+        <app-my-timeline
+        *ngSwitchDefault></app-my-timeline>
+      </div>
+
+
+
+      <!-- <div class="container mx-2 p-2">
+        <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+      </div>
+
+      <div class="container mx-3 p-2">
+        <div class="jumbotron">
+          <h1>Hello, world!</h1>
+          <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+          <hr class="my-4">
+          <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        </div>
+      </div> -->
+
+      <div class="scroll-to-top" [ngClass]="{'show-scrollTop': windowScrolled}">
+      <button mat-fab class="btn active" data-toggle="button"  (click)="scrollToTop()">
+        <mat-icon>eject</mat-icon>
+        </button>
+        </div>
+        <div >
+      <button mat-fab  class="refresh" (click)="Refresh()">
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </div>
+
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+</div>

@@ -1,0 +1,96 @@
+.example-card {
+  border:1px solid rgb(194, 193, 193);
+   border-radius: 5px;
+   padding: 3px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color:white;
+  padding:10px;
+  height: 70px;
+  max-width: 800px;
+  margin:4px;
+}
+
+.addPostHeading{
+  padding-left: 20px;
+  margin-bottom: 0px;
+  margin-top: 11px;
+  color: grey;
+  transition: 1s ease;
+}
+.addPostHeading:hover{
+ transform: scale(1.1);
+ color:black;
+}
+
+button:hover{
+  transform: translateY(-3px);
+    box-shadow: 6px 6px 5px rgba(120, 122, 122, 0.5);
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.icon-img{
+  max-width:45px;
+  max-height:45px;
+  border-radius: 50%;
+}
+
+.mycss {
+   border:1px solid rgb(194, 193, 193);
+   border-radius: 5px;
+   padding: 3px;
+   margin: 10px;
+   width:660px;
+   background-color:none;
+   box-shadow: 0 0.5rem 0.2rem 0 rgb(148, 148, 148);
+}
+
+table{
+  width:100%;
+}
+
+.mycss-1 {
+  border:1px solid rgb(194, 193, 193);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  margin-top: 10px;
+  margin-left: 20px;
+  width:250px;
+  background-color:none;
+  box-shadow: 0 0.2rem 0.2rem 0 rgb(148, 148, 148);
+}
+.side-space{
+  justify-content: center;
+}
+
+.leftProfileCard{
+   align-items: center;
+}
+
+.leftProfileCard-img{
+   border-radius: 50%;
+   width:200px;
+   height:200px;
+   margin-bottom: 25px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-menu{
+  margin-top: 20px;
+  z-index: 0;
+}
+
+.btn-sty{
+  width:110px;
+  height:40px;
+  margin-top: 4px;
+  margin-right: 3px;
+}

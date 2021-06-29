@@ -1,0 +1,42 @@
+
+
+<div class="container text-center" [ngStyle]="divDy">
+<h1>Get Users: Admin Page</h1>
+</div>
+<div class="container row bg-dark" [ngStyle]="dispDy" style="width: 800px;">
+  <div class="p-3" *ngFor="let snippet of snippet">
+    <h4 class="p-0 m-0 text-white" style="font: size 30px;; font-family: 'Poppins';">
+     User ID: ----------- {{snippet.id}}
+     <h4 class="p-0 m-0 text-white" style="font: size 30px;; font-family: 'Poppins';">
+     Username: -------- {{snippet.username}}
+     </h4>
+     <h4 class="p-0 m-0 text-white" style="font: size 30px;; font-family: 'Poppins';">
+     Firstname: -------- {{snippet.firstname}}
+     </h4>
+     <h4 class="p-0 m-0 text-white" style="font: size 30px;; font-family: 'Poppins';">
+     Secondname: ----- {{snippet.lastname}}
+     </h4>
+     <h4 class="p-0 m-0 text-white" style="font: size 30px;; font-family: 'Poppins';">
+     Email ID: ---------- {{snippet.email}}
+     </h4>
+     <h4 class="p-0 m-0 text-white" style="font: size 30px;; font-family: 'Poppins';">
+     Phone No.: -------- {{snippet.phone}}
+     </h4>
+     <h4 class="p-0 m-0 text-white" style="font: size 30px;; font-family: 'Poppins';">
+     User Bio: ---------- {{snippet.bio}}
+     </h4>
+     <h4 class="p-0 m-0 text-white" style="font: size 30px;; font-family: 'Poppins';">
+     User Image Link: --- {{snippet.imagepro}}
+     </h4>
+     <h4 class="p-0 m-0 text-white" style="font: size 30px;; font-family: 'Poppins';">
+     User Cover Link: ---- {{snippet.imagecov}}
+     </h4>
+     <h4 class="p-0 m-0 text-white" style="font: size 30px;; font-family: 'Poppins';">
+     User Authority: ----- {{snippet.authorities[0].authority}}
+     </h4>
+    </h4>
+  </div>
+  <mat-divider class="my-1 mx-4"></mat-divider>
+</div>
+
+<div style="width: 100%; height: 400px;"></div>

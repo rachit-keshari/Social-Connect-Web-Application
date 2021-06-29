@@ -1,0 +1,127 @@
+<!-- Navbar -->
+<div class="stickyBar">
+  <mat-toolbar [color]="colorVal" [class]="colorVal">
+        <div class="text-left">
+          <button mat-icon-button class="example-icon" (click)="toggle()" *ngIf="loginService.isLoggedIn()">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <span class="ml-1">Social-Connect</span>
+        </div>
+        <span class="example-spacer"></span>
+        <div  class="row text-center menu-items"
+             [ngStyle]="menuItemsDy"
+        *ngIf="loginService.isLoggedIn()">
+            <button mat-mini-fab matTooltip="Home Page" [color]="colorVal" [class]="colorVal" (click)="switchToMo2()">
+              <mat-icon>home</mat-icon>
+            </button>
+            <div class="icon-space" [ngStyle]="iconSpaceDy"></div>
+            <button mat-mini-fab matTooltip="Play Videos" [color]="colorVal"
+             [class]="colorVal" (click)="switchToNmo2()">
+              <mat-icon>ondemand_video</mat-icon>
+            </button>
+            <div class="icon-space" [ngStyle]="iconSpaceDy"></div>
+            <button mat-mini-fab matTooltip="Photo Library" [color]="colorVal"
+             [class]="colorVal" (click)="switchToMo3()">
+              <mat-icon>photo_library</mat-icon>
+            </button>
+            <div class="icon-space" [ngStyle]="iconSpaceDy"></div>
+            <button mat-mini-fab matTooltip="My Profile" [color]="colorVal"
+             [class]="colorVal" (click)="switchToNmo1()">
+              <mat-icon>person</mat-icon>
+            </button>
+            <div class="icon-space" [ngStyle]="iconSpaceDy"></div>
+            <button mat-mini-fab matTooltip="Edit Profile" [color]="colorVal"
+             [class]="colorVal" (click)="openEditProfileDialog()">
+              <mat-icon>edit</mat-icon>
+            </button>
+
+            </div>
+
+        <span class="example-spacer"></span>
+    <div class="row mx-2 p-1 text-right" *ngIf="!loginService.isLoggedIn()">
+      <div class="col-md-5 mx-0 mr-2 p-0">
+        <button class="btn btn-outline-light mb-1" [ngStyle]="btnDy" [routerLink]="'/login'">
+          Login
+        </button>
+      </div>
+      <div class="col-md-5 mx-0 mr-2 p-0">
+        <button class="btn btn-outline-light" [ngStyle]="btnDy" [routerLink]="'/signup'">
+          Register
+        </button>
+      </div>
+    </div>
+
+    <div class="row mx-2 p-1 text-right" *ngIf="loginService.isLoggedIn()">
+
+      <div class="col-md-5 mx-0 mr-2 p-0">
+        <button class="btn btn-outline-light" [ngStyle]="btnDy" (click)="logout()">
+          Logout
+        </button>
+      </div>
+
+      <div class="col-md-5 mx-0 mr-2 p-0">
+        <button class="btn btn-outline-light" [ngStyle]="btnDy" [matMenuTriggerFor]="menu">
+          {{userName}}
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+            <path
+              d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+          </svg>
+        </button>
+
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="switchToNmo1()">
+            <mat-icon>account_circle</mat-icon>&nbsp;
+            <span>My Profile</span>
+          </button>
+          <button mat-menu-item (click)="openEditProfileDialog()">
+            <mat-icon> border_color</mat-icon>&nbsp;
+            <span>Edit Profile</span>
+          </button>
+          <button mat-menu-item (click)="switchToNmo3()">
+            <mat-icon>settings</mat-icon>&nbsp;
+            <span>Settings</span>
+          </button>
+          <button mat-menu-item (click)="switchToNmo4()">
+            <mat-icon>extension</mat-icon>&nbsp;
+            <span>About Me</span>
+          </button>
+          <button mat-menu-item (click)="switchToNmo5()">
+            <mat-icon>explore</mat-icon>&nbsp;
+            <span>Contact Me</span>
+          </button>
+        </mat-menu>
+
+      </div>
+    </div>
+  </mat-toolbar>
+</div>
+
+<ng-template #editProfileDialog>
+  <form (ngSubmit)="editDilogFormSubmit()" class="p-3">
+    <h2 matDialogTitle>Edit Profile</h2>
+    <div class="mb-3 p-2">
+      <label for="exampleFormControlTextarea1" class="form-label">Edit Bio</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Bio"
+        [(ngModel)]="editProfile.bio" [ngModelOptions]="{standalone: true}"></textarea>
+    </div>
+    <div class="mb-3 p-2">
+      <label class="form-label">Edit Phone</label>
+      <input class="form-control" rows="3" placeholder="phone" [(ngModel)]="editProfile.phone"
+        [ngModelOptions]="{standalone: true}" />
+    </div>
+    <div class="mb-3 p-2">
+      <label for="formFile" class="form-label">Edit Profile Image</label>
+      <input class="form-control" type="file" id="proFile" (change)="onProfileFileChange($event)">
+    </div>
+    <div class="mb-3 p-2">
+      <label for="formFile" class="form-label">Edit Cover Image</label>
+      <input class="form-control" type="file" id="covFile" (change)="onCoverFileChange($event)">
+    </div>
+    <mat-dialog-actions align="end">
+      <button class="mx-2" type="submit" mat-raised-button color="primary">Submit</button>
+      <button class="mx-2" type="reset" mat-raised-button color="primary">Reset</button>
+      <button class="mx-2" mat-raised-button matDialogClose="no">Cancel</button>
+    </mat-dialog-actions>
+  </form>
+</ng-template>

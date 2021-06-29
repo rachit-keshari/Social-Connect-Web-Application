@@ -1,0 +1,50 @@
+<div class="container mycss">
+  <div class="row">
+    <div class="col-lg-10 col-xl-9 mx-auto">
+      <div class="card card-signin flex-row my-5">
+        <div class="card-img-left d-none d-md-flex">
+          <!-- Background image for card set in CSS! -->
+        </div>
+        <div class="card-body">
+          <h4 class="card-title text-center">Register</h4>
+          <form (ngSubmit)="formSubmit()" ngNativeValidate>
+            <div class="container text-center">
+              <!-- {{user | json}} -->
+              <div class="form-group my-3 mycard">
+                <input  [(ngModel)]="user.username"  name="username" type="text" class="form-control" placeholder="Enter Username">
+              </div>
+              <div class="form-group my-3 mycard">
+                <input [(ngModel)]="user.password" type="password" class="form-control" name="password" placeholder="Enter Password" required>
+              </div>
+              <div class="form-group row my-3 px-3">
+                <div class="col-md-5 mycard">
+                  <input [(ngModel)]="user.firstname" type="text" class="form-control" name="firstname" placeholder="Enter Firstname" required>
+                </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="col-md-6 mycard">
+                  <input [(ngModel)]="user.lastname" type="text" class="form-control" name="lastname" placeholder="Enter Lastname" required>
+                </div>
+              </div>
+              <div class="form-group my-3 mycard">
+                <input [(ngModel)]="user.phone" type="number" class="form-control" name="phone" placeholder="Enter Phone No" required>
+              </div>
+              <div class="form-group my-3 mycard">
+                <input [(ngModel)]="user.email" type="email" class="form-control" name="email" placeholder="Enter Email" required>
+              </div>
+              <div class="form-group form-check my-3">
+                <input type="checkbox" class="form-check-input" required>
+                <label class="form-check-label" for="exampleCheck1">Accept Terms & Conditions</label>
+              </div>
+
+              <button type="submit" class="btn btn-outline-dark" id="raise">Register</button>&nbsp;
+              &nbsp;
+            <button type="reset" class="btn btn-outline-dark" id="raise">Clear</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="width: 100%; height:200px;"></div>
