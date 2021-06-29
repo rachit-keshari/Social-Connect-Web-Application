@@ -117,9 +117,9 @@ export class AdminService {
 
   //get youtube videos
   public getVideos(search:string){
-         return this.http.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyBGU_vl5qEt4QwfkbGQwfJJV0IUdbA8Og8
+         return this.http.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&key=Google_API_Key
          &type=video&maxResults=10&q=${search}`);
-        //  old key: AIzaSyBkyWILV75BGj1Vre4XIDyKGpTgK6s0YiU
+       
   }
 
   //get post
